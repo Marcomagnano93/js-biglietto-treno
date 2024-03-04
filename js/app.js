@@ -11,7 +11,30 @@ console.log("Età del passeggero: " + age)
 // km che il passeggero vuole percorrere
 const km = parseFloat(prompt("Quanti km devi percorrere?")); //number
 
-console.log("Devi percorrere: " + km + " km.")
+console.log("Distanza da percorrere: " + km + " km.")
 
 //prezzo del biglietto
+
+let price = (km * 0.21).toFixed(2); //number
+
+console.log("Il prezzo senza sconti è: " + price + " euro.")
+
+if (age < 18) {
+    const discountUnder = (price * 0.20).toFixed(2); //number
+    const priceDiscountedUnder = (price - discountUnder).toFixed(2); //number
+    console.log("Il tuo sconto è: " + discountUnder + " euro.")
+    console.log("Il prezzo totale è: " + priceDiscountedUnder + " euro.")
+}
+
+else if(age >= 18, age < 65){
+    console.log("Il prezzo totale è: " + price + " euro.")
+}
+
+else{
+    const discountOver = (price * 0.40).toFixed(2); //number
+    const priceDiscountedOver = (price - discountOver).toFixed(2); //number
+    console.log("Il tuo sconto è: " + discountOver + " euro.")
+    console.log("Il prezzo totale è: " + priceDiscountedOver + " euro.")
+}
+
 
