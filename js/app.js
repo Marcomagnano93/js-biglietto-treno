@@ -15,13 +15,16 @@ console.log("Distanza da percorrere: " + km + " km.")
 
 //prezzo del biglietto
 
-let price = (km * 0.21).toFixed(2); //number
+
+// ********************* ARROTONDATO CON .toFixed *************************
+
+let price = (km * 0.21).toFixed(2); //string
 
 console.log("Il prezzo senza sconti è: " + price + " euro.")
 
 if (age < 18) {
-    const discountUnder = (price * 0.20).toFixed(2); //number
-    const priceDiscountedUnder = (price - discountUnder).toFixed(2); //number
+    const discountUnder = (price * 0.20).toFixed(2); //string
+    const priceDiscountedUnder = (price - discountUnder).toFixed(2); //string
     console.log("Il tuo sconto è: " + discountUnder + " euro.")
     console.log("Il prezzo totale è: " + priceDiscountedUnder + " euro.")
 }
@@ -31,10 +34,36 @@ else if(age >= 18, age < 65){
 }
 
 else{
-    const discountOver = (price * 0.40).toFixed(2); //number
-    const priceDiscountedOver = (price - discountOver).toFixed(2); //number
+    const discountOver = (price * 0.40).toFixed(2); //string
+    const priceDiscountedOver = (price - discountOver).toFixed(2); //string
     console.log("Il tuo sconto è: " + discountOver + " euro.")
     console.log("Il prezzo totale è: " + priceDiscountedOver + " euro.")
 }
 
 
+
+
+//************** * ARROTONDATO CON Math.round *****************
+
+
+if (age < 18) {
+    const discountUnder = price * 0.20; //number
+    const priceDiscountedUnder = price - discountUnder; //number
+    const roundedUnder = Math.round(priceDiscountedUnder*100)/100; //number
+
+    console.log("QUESTO UN'ALTRO ESEMPIO: " + roundedUnder + " euro.")
+}
+
+else if(age >= 18, age < 65){
+    console.log("Il prezzo totale è: " + price + " euro.")
+}
+
+else{
+    const discountOver = price * 0.40; //number
+    const priceDiscountedOver = price - discountOver; //number
+    const roundedOver = Math.round(priceDiscountedOver*100)/100; //number
+
+
+    console.log("QUESTO UN'ALTRO ESEMPIO: " + roundedOver + " euro.")
+
+}
